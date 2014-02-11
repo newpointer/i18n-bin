@@ -8,7 +8,7 @@
         "url": "http://null-pointer.ru/"
     },
 
-    "files": ["README.md"],
+    "files": ["docs", "README.md"],
 
     "repository": {
     },
