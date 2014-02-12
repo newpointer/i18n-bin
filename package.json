@@ -14,6 +14,11 @@
     },
 
     "dependencies": {
+        "po2json": "0.0.x",
+        "underscore": "1.4.x",
+        "fs-extra": "0.8.x",
+        "findit": "0.1.x",
+        "byline": "2.0.x"
     },
 
     "devDependencies": {
@@ -22,7 +27,7 @@
         "grunt-contrib-jshint": "~0.8",
         "grunt-contrib-copy": "~0.5.0",
 
-        "mocha": "~1.17",
+        "grunt-mocha-test": "~0.9",
         "chai": "*"
     }
 }

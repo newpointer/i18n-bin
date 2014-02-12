@@ -1,4 +1,0 @@
-/**
- * @module main
- * @author ankostyuk
- */
