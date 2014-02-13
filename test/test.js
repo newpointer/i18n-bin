@@ -7,16 +7,21 @@ var chai        = require('chai'),
     expect      = chai.expect,
     should      = chai.should();
 
-var keyextract  = require('../src/keyextract');
+var keyextract  = require('../src/keyextract'),
+    build       = require('../src/build') ;
 
-describe('keyextract...', function(){
-    it('Извлечение ключей', function(){
-        keyextract.extract({
-            inputDir: __dirname + '/input',
-            inputRootPath: __dirname,
-            fileMaskRegexp: '\.((js)|(html)|(ftl))$',
-            outputDir: __dirname + '/output',
-            baseLang: 'ru'
+describe('build test...', function(){
+    it('Сборка i18n', function(done){
+        build.run({
+            pattern:        '**/*.+(js|ftl|html)',
+            inputDir:       __dirname + '/input',
+            inputRootPath:  __dirname,
+            outputDir:      __dirname + '/output',
+            bundleDir:      __dirname + '/result',
+            baseLang:       'ru',
+            langs:          ['ru', 'en']
+        }, function(){
+            done();
         });
     })
 })

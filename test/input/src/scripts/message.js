@@ -7,18 +7,30 @@ define(function(require) {'use strict';
         m3: _trc("ключ", "ключ воды, приток реки"),
 
         translateKeys: function(count) {
-            return _trn("ключ|ключа|ключей", count);
+            return _trn("ключ", count);
         },
 
         translateClues: function(count) {
-            return _trnc("ключ|ключа|ключей", count, "к разгадке чего-либо");
+            return _trnc("ключ", count, "к разгадке чего-либо");
         },
 
         translateFeeder: function(count) {
-            return _trnc("ключ|ключа|ключей", count, "ключ воды, приток реки");
+            return _trnc("ключ", count, "ключ воды, приток реки");
         },
 
-        m4: _tr("корова")
+        m4: _tr("корова"),
+
+        // Достаточно только "засветить" системные ключи,
+        // которые могут использоваться, например,
+        // в качестве статусов ответов API,
+        // системных сообщений, ...
+        // а далее их перевод при "рендеренге"
+        // -- не надо "морочиться" с локализацией данных констант на бэкенде
+        system: [
+            _tr("SYSTEM_ERROR"),
+            _tr("STATUS_OK"),
+            _tr("STATUS_ERROR")
+        ]
     };
 
     return message;

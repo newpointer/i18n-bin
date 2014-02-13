@@ -5,87 +5,73 @@
  * @author ankostyuk
  */
 
-"use strict"
+"use strict";
 
 //
-var options = {
-     // Путь к директории исходных файлов (где собирать ключи)
-    inputDir: '',
-
-    // Путь к корню директории исходных файлов
-    // Относительно данного пути будут записанны источники ключей в результатах
-    inputRootPath: '',
-
-    // Regexp маски файлов, из которых надо извлекать ключи
-    fileMaskRegexp: '',
-
-    // Путь к директории, в которой будут сформированы результаты
-    outputDir: '',
-
-    // Базовый язык - язык ключей перевода
-    baseLang: ''
-};
-
-var poHeaderDir = __dirname + '/po-headers/';
-
-var ROOT_PATH_REPLACER = '...';
-
-//
-var TR_REGEXP       = '_tr\\s*\\(\\s*"((?:[^"\\\\]|\\\\.)*)"\\s*\\)';
-var TRC_REGEXP      = '_trc\\s*\\(\\s*"((?:[^"\\\\]|\\\\.)*)"\\s*,\\s*"((?:[^"\\\\]|\\\\.)*)"\\s*\\)';
-var TRN_REGEXP      = '_trn\\s*\\(\\s*"((?:[^"\\\\]|\\\\.)*)"\\s*,[^,\\)]*\\)';
-var TRNC_REGEXP     = '_trnc\\s*\\(\\s*"((?:[^"\\\\]|\\\\.)*)"\\s*,[^,\\)]*\\s*,\\s*"((?:[^"\\\\]|\\\\.)*)"\\s*\\)';
-
-//
-var findit          = require('findit'),
+var glob            = require("glob"),
     byline          = require('byline'),
     util            = require('util'),
     _               = require('underscore'),
-    po2json         = require('po2json'),
     pohelper        = require('./po-helper'),
+    path            = require('path'),
     fs              = require('fs-extra');
 
 //
-var messageMap = {};
-var potHeaderFile;
+var options = {}; // см. build.js
+
+var poHeaderDir         = path.resolve(__dirname, 'po-headers'),
+    PO_EXT              = '.po',
+    POT_FILE_NAME       = 'messages.pot',
+    ROOT_PATH_REPLACER  = '...',
+    FUZZY_TAG           = '#, fuzzy';
 
 //
-function extract(o) {
+var TR_REGEXP       = '_tr\\s*\\(\\s*"((?:[^"\\\\]|\\\\.)*)"\\s*\\)',
+    TRC_REGEXP      = '_trc\\s*\\(\\s*"((?:[^"\\\\]|\\\\.)*)"\\s*,\\s*"((?:[^"\\\\]|\\\\.)*)"\\s*\\)',
+    TRN_REGEXP      = '_trn\\s*\\(\\s*"((?:[^"\\\\]|\\\\.)*)"\\s*,[^,\\)]*\\)',
+    TRNC_REGEXP     = '_trnc\\s*\\(\\s*"((?:[^"\\\\]|\\\\.)*)"\\s*,[^,\\)]*\\s*,\\s*"((?:[^"\\\\]|\\\\.)*)"\\s*\\)';
+
+//
+var messageMap = {},
+    potFile, potHeaderFile;
+
+//
+function run(o, callback) {
     messageMap = {};
     options = o;
-    potHeaderFile =   poHeaderDir + options.baseLang + '.po';
+    potFile     = path.resolve(options.outputDir, POT_FILE_NAME);
+    potHeaderFile = path.resolve(poHeaderDir, options.baseLang + PO_EXT);
 
-    doDir();
-}
-
-function doDir() {
-    var files = findit
-        .sync(options.inputDir)
-        .filter(function(filePath){
-            var stat = fs.statSync(filePath);
-            return (stat && stat.isFile() && isDoFile(filePath));
-        });
-
-    var doCount = 0;
-
-    files.forEach(function(filePath){
-        doFile(filePath, function() {
-            if (++doCount == files.length) {
-                console.log(util.format('Собрано ключей перевода в %s: %s', options.inputDir, _.size(messageMap)));
-                createMessagePotFile();
-            }
+    doDir(function(){
+        callback({
+            potFile: potFile
         });
     });
 }
 
-function isDoFile(filePath) {
-    var result = filePath.match(new RegExp(options.fileMaskRegexp, 'ig'));
-    return (util.isArray(result) && result.length == 1);
+function doDir(callback) {
+
+    glob(options.pattern, {
+        cwd: options.inputDir
+    }, function(error, files) {
+        var doCount = 0;
+
+        files.forEach(function(file){
+            doFile(path.resolve(options.inputDir, file), function() {
+                if (++doCount == files.length) {
+                    console.log('Собрано ключей перевода в');
+                    console.log(util.format('%s: %s', options.inputDir, _.size(messageMap)));
+                    createMessagePotFile();
+                    callback();
+                }
+            });
+        });
+    });
 }
 
 function doFile(filePath, callback) {
-    var lineNumber = 0;
-    var order = 0;
+    var lineNumber  = 0,
+        order       = 0;
 
     byline(fs.createReadStream(filePath))
         .on('data', function(line) {
@@ -122,7 +108,7 @@ function extractMessageParams(regexp, text, params) {
 function regexpIterator(regexp, text, callback) {
     var result = null;
 
-    while (result = regexp.exec(text)) {
+    while ((result = regexp.exec(text))) {
         callback(result);
     }
 }
@@ -130,7 +116,7 @@ function regexpIterator(regexp, text, callback) {
 function doMessage(filePath, lineNumber, messageParamsList) {
     messageParamsList.forEach(function(messageParams){
         if (messageParams.plural) {
-            messageParams.key = pohelper.getPluralFormsByKey(messageParams.plural)[0];
+            messageParams.key = messageParams.plural;
         }
 
         var k = messageParams.key + messageParams.context;
@@ -170,24 +156,31 @@ function createMessagePotFile() {
         // sort messages
         var location = message.locations[0];
 
-        return
-            location.filePath +
-            lineNumberForSort(location.lineNumber) +
-            _.size(_.compact(_.values(message)));
+        return location.filePath +
+               lineNumberForSort(location.lineNumber) +
+               _.size(_.compact(_.values(message)));
     });
 
     //
-    var potFile = options.outputDir + '/messages.pot';
+    var potData         = pohelper.getPoData(potHeaderFile),
+        pluralFormCount = pohelper.getPluralFormCount(potData);
 
-    var potHeaderData = fs.readFileSync(potHeaderFile);
-    fs.outputFileSync(potFile, potHeaderData);
+    var potHeader   = fs.readFileSync(potHeaderFile);
+
+    fs.outputFileSync(potFile, potHeader);
 
     messages.forEach(function(message){
         fs.appendFileSync(potFile, '\n');
 
         message.locations.forEach(function(location){
-            fs.appendFileSync(potFile, util.format('#: %s:%s\n', location.filePath.replace(options.inputRootPath, ROOT_PATH_REPLACER), location.lineNumber));
+            // Путь информационный (от "базовой" директории),
+            // поэтому помещен в простые комментарии [#], а не в тег location [#:]
+            fs.appendFileSync(potFile, util.format('# %s:%s\n', location.filePath.replace(options.inputRootPath, ROOT_PATH_REPLACER), location.lineNumber));
         });
+
+        if (message.plural) {
+            fs.appendFileSync(potFile, util.format('%s\n', FUZZY_TAG));
+        }
 
         if (message.context) {
             fs.appendFileSync(potFile, util.format('msgctxt "%s"\n', message.context));
@@ -198,9 +191,8 @@ function createMessagePotFile() {
         if (message.plural) {
             fs.appendFileSync(potFile, util.format('msgid_plural "%s"\n', '')); // не используется
 
-            var plurals = pohelper.getPluralFormsByKey(message.plural);
-            for (var i = 0; i < plurals.length; i++) {
-                fs.appendFileSync(potFile, util.format('msgstr[%s] "%s"\n', i, plurals[i]));
+            for (var i = 0; i < pluralFormCount; i++) {
+                fs.appendFileSync(potFile, util.format('msgstr[%s] "%s"\n', i, message.key));
             }
         } else {
             fs.appendFileSync(potFile, 'msgstr ""\n');
@@ -208,7 +200,8 @@ function createMessagePotFile() {
     });
 
     //
-    console.log(util.format('Сформирован файл ключей перевода PO (POT): %s', potFile));
+    console.log('Сформирован файл ключей перевода PO (POT):');
+    console.log(potFile);
 }
 
 function lineNumberForSort(lineNumber) {
@@ -216,4 +209,4 @@ function lineNumberForSort(lineNumber) {
 }
 
 //
-module.exports.extract = extract;
+module.exports.run = run;

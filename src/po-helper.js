@@ -4,19 +4,22 @@
  * @author ankostyuk
  */
 
+"use strict";
+
 //
-var _ = require('underscore');
+var po2json = require('po2json'),
+    _       = require('underscore');
 
 //
 var PO_HEADER_KEY = '';
-var PO_HEADER_PLURAL_FORMS_KEY = 'Plural-Forms';
-var PO_HEADER_CLDR_PLURAL_FORMS_KEY = 'CLDR_PLURAL_FORMS_FORMAT';
-
-var PLURAL_FORM_SEPARATOR = '|';
+var PO_HEADER_PLURAL_FORMS_KEY = 'Plural-Forms'.toLowerCase();
+var PO_HEADER_CLDR_PLURAL_FORMS_KEY = 'CLDR_PLURAL_FORMS_FORMAT'.toLowerCase();
 
 //
-function getPoLangData(poData) {
-    return poData[_.keys(poData)[0]];
+function getPoData(poFile) {
+    return po2json.parseFileSync(poFile, {
+        fuzzy: true
+    });
 }
 
 function buildPoPluralFormFunc(poLangData, returnCode) {
@@ -29,7 +32,7 @@ function getPoHeader(poLangData) {
 }
 
 function setPoHeader(poLangData, data) {
-    return poLangData[PO_HEADER_KEY] = data;
+    poLangData[PO_HEADER_KEY] = data;
 }
 
 function getPluralFormCount(poLangData) {
@@ -51,15 +54,10 @@ function getCldrPluralForms(poLangData) {
     return poLangData[PO_HEADER_KEY][PO_HEADER_CLDR_PLURAL_FORMS_KEY];
 }
 
-function getPluralFormsByKey(pluralKey) {
-    return pluralKey.split(PLURAL_FORM_SEPARATOR);
-}
-
 //
-module.exports.getPoLangData = getPoLangData;
+module.exports.getPoData = getPoData;
 module.exports.getPoHeader = getPoHeader;
 module.exports.setPoHeader = setPoHeader;
 module.exports.getPluralFormCount = getPluralFormCount;
 module.exports.getPluralFormsRuleCode = getPluralFormsRuleCode;
 module.exports.getCldrPluralForms = getCldrPluralForms;
-module.exports.getPluralFormsByKey = getPluralFormsByKey;
