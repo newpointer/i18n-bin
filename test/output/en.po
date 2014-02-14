@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: feedback@null-pointer.ru\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: ankostyuk <andrew.kostyuk@gmail.com>\n"
+"Last-Translator: NULLPOINTER <feedback@null-pointer.ru>\n"
 "Language-Team: NULLPOINTER <feedback@null-pointer.ru>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -12,26 +12,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "CLDR_PLURAL_FORMS_FORMAT: one{0}other{1}\n"
-"X-Generator: Poedit 1.5.5\n"
 
-# .../input/src/scripts/message.js:32
+# .../input/src/scripts/message.js:37
 msgid "STATUS_ERROR"
-msgstr "Status error"
+msgstr ""
 
-# .../input/src/scripts/message.js:31
+# .../input/src/scripts/message.js:36
 msgid "STATUS_OK"
-msgstr "Status OK"
+msgstr ""
 
-# .../input/src/scripts/message.js:30
+# .../input/src/scripts/message.js:35
 msgid "SYSTEM_ERROR"
-msgstr "System error"
+msgstr ""
 
 # .../input/src/scripts/message.js:24
 # .../input/src/scripts/message.js:25
+#, fuzzy
 msgid "Красивый лиловый шар, наполненный водородом."
 msgid_plural ""
-msgstr[0] "Beautiful purple balloon filled with hydrogen."
-msgstr[1] "Beautiful purple balloons filled with hydrogen."
+msgstr[0] "Красивый лиловый шар, наполненный водородом."
+msgstr[1] "Красивый лиловый шар, наполненный водородом."
+msgstr[2] "Красивый лиловый шар, наполненный водородом."
 
 # .../input/src/scripts/message.js:4
 # .../input/src/scripts/message.js:10
@@ -45,10 +46,12 @@ msgstr[1] "Beautiful purple balloons filled with hydrogen."
 # .../input/src/views/template.html:8
 # .../input/src/views/template.html:9
 # .../input/src/views/template.html:10
+#, fuzzy
 msgid "ключ"
 msgid_plural ""
-msgstr[0] "key"
-msgstr[1] "keys"
+msgstr[0] "ключ"
+msgstr[1] "ключ"
+msgstr[2] "ключ"
 
 # .../input/src/scripts/message.js:6
 # .../input/src/scripts/message.js:14
@@ -62,11 +65,13 @@ msgstr[1] "keys"
 # .../input/src/views/template.html:13
 # .../input/src/views/template.html:14
 # .../input/src/views/template.html:15
+#, fuzzy
 msgctxt "к разгадке чего-либо"
 msgid "ключ"
 msgid_plural ""
-msgstr[0] "clue"
-msgstr[1] "clues"
+msgstr[0] "ключ"
+msgstr[1] "ключ"
+msgstr[2] "ключ"
 
 # .../input/src/scripts/message.js:7
 # .../input/src/scripts/message.js:18
@@ -80,14 +85,16 @@ msgstr[1] "clues"
 # .../input/src/views/template.html:18
 # .../input/src/views/template.html:19
 # .../input/src/views/template.html:20
+#, fuzzy
 msgctxt "ключ воды, приток реки"
 msgid "ключ"
 msgid_plural ""
-msgstr[0] "feeder"
-msgstr[1] "feeders"
+msgstr[0] "ключ"
+msgstr[1] "ключ"
+msgstr[2] "ключ"
 
 # .../input/src/scripts/message.js:21
 # .../input/src/views/template.ftl:22
 # .../input/src/views/template.html:22
 msgid "корова"
-msgstr "cow"
+msgstr ""

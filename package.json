@@ -2,13 +2,15 @@
     "name" : "nullpointer-i18n-bin",
     "version" : "0.0.1-SNAPSHOT",
     "description": "i18n scripts",
+    "keywords": ["i18n", "gettext", "po", "pot"],
 
     "author": {
         "name": "Nullpointer",
         "url": "http://null-pointer.ru/"
     },
 
-    "files": ["docs", "README.md"],
+    "files": ["docs", "lib"],
+    "main": "./lib/build",
 
     "repository": {
     },

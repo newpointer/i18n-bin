@@ -24,8 +24,14 @@ module.exports = function(grunt) {
 
         copy: {
             dist: {
+                expand: true,
+                cwd: 'src/',
+                src: ['**/*.js', '**/*.po'],
+                dest: 'lib/'
             },
             docs: {
+                src: 'src/build.md',
+                dest: 'docs/build.md'
             }
         }
     });

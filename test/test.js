@@ -7,8 +7,7 @@ var chai        = require('chai'),
     expect      = chai.expect,
     should      = chai.should();
 
-var keyextract  = require('../src/keyextract'),
-    build       = require('../src/build') ;
+var build = require('../src/build');
 
 describe('build test...', function(){
     it('Сборка i18n', function(done){
