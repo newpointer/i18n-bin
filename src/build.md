@@ -55,6 +55,12 @@ _feeder_ - приток реки, канал.
 
 ## Использование
 
+### Окружение
+
+* node.js 0.10.x+
+* npm 1.3.x+
+* msgmerge [GNU 'gettext' utilities](https://www.gnu.org/software/gettext/manual/html_node/msgmerge-Invocation.html)
+
 ### Установка
 
     npm install git+ssh://git@repo.nkb:nullpointer/i18n-bin.git
