@@ -11,3 +11,6 @@ tmp/
 
 *.versionsBackup
 *.log
+
+*.mo
+*.po~

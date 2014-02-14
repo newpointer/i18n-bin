@@ -78,14 +78,23 @@ msgstr[2] "ключ"
 msgid "корова"
 msgstr ""
 
-# .../input/src/scripts/message.js:30
+# .../input/src/scripts/message.js:24
+# .../input/src/scripts/message.js:25
+#, fuzzy
+msgid "Красивый лиловый шар, наполненный водородом."
+msgid_plural ""
+msgstr[0] "Красивый лиловый шар, наполненный водородом."
+msgstr[1] "Красивый лиловый шар, наполненный водородом."
+msgstr[2] "Красивый лиловый шар, наполненный водородом."
+
+# .../input/src/scripts/message.js:35
 msgid "SYSTEM_ERROR"
 msgstr ""
 
-# .../input/src/scripts/message.js:31
+# .../input/src/scripts/message.js:36
 msgid "STATUS_OK"
 msgstr ""
 
-# .../input/src/scripts/message.js:32
+# .../input/src/scripts/message.js:37
 msgid "STATUS_ERROR"
 msgstr ""

@@ -35,7 +35,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('build', ['jshint:src']);
+    grunt.registerTask('build', ['jshint:src', 'test']);
     grunt.registerTask('test', ['mochaTest']);
     grunt.registerTask('dist', ['build', 'copy:dist', 'copy:docs']);
 };
