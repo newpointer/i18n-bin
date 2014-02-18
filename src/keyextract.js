@@ -70,6 +70,11 @@ function doDir(callback) {
 }
 
 function doFile(filePath, callback) {
+    if (!fs.statSync(filePath).isFile()) {
+        callback();
+        return;
+    }
+
     var lineNumber  = 0,
         order       = 0;
 
