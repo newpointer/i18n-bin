@@ -18,6 +18,7 @@
     "dependencies": {
         "po2json": "0.2.x",
         "underscore": "1.4.x",
+        "underscore.string": "2.3.x",
         "fs-extra": "0.8.x",
         "glob": "3.2.x",
         "byline": "2.0.x"
