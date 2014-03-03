@@ -126,11 +126,10 @@ function extractMessageParamsBySignature(regexp, text, params) {
 }
 
 function extractMessageParamsBySimple(text) {
-    if(text.substring(0, 1) == "#"){
-	return [];
-    }
-    return _s.isBlank(text) ? [] : [{
-        'key': text
+    text = _s.trim(text);
+
+    return (_s.isBlank(text) || text.indexOf('#') === 0) ? [] : [{
+	 'key': text
     }];
 }
 

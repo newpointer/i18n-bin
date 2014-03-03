@@ -8,7 +8,6 @@ module.exports = function(grunt) {
             options: {
                 force: true,
                 node: true,
-		'-W054': true,
                 '-W069': true
             },
             src: ['src/**/*.js']
