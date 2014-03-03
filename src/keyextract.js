@@ -126,6 +126,9 @@ function extractMessageParamsBySignature(regexp, text, params) {
 }
 
 function extractMessageParamsBySimple(text) {
+    if(text.substring(0, 1) == "#"){
+	return [];
+    }
     return _s.isBlank(text) ? [] : [{
         'key': text
     }];

@@ -3,4 +3,5 @@
 
 SYSTEM_ERROR
 STATUS_ERROR
+# статус "ок"
 STATUS_OK

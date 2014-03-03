@@ -6,29 +6,9 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: NULLPOINTER <feedback@null-pointer.ru>\n"
 "Language-Team: NULLPOINTER <feedback@null-pointer.ru>\n"
-"Language: en\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "CLDR_PLURAL_FORMS_FORMAT: one{0}other{1}\n"
-
-#: ../input/resources/system/system.i18nkeys:5
-msgid "STATUS_ERROR"
-msgstr ""
-
-#: ../input/resources/system/system.i18nkeys:7
-msgid "STATUS_OK"
-msgstr ""
-
-#: ../input/resources/system/system.i18nkeys:4
-msgid "SYSTEM_ERROR"
-msgstr ""
-
-#: ../input/resources/xxx/xxx.txt:1
-msgid "ключ"
-msgstr ""
-
-#: ../input/resources/xxx/xxx.txt:2
-msgid "корова"
-msgstr ""

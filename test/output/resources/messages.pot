@@ -21,7 +21,7 @@ msgstr ""
 msgid "STATUS_ERROR"
 msgstr ""
 
-#: ../input/resources/system/system.i18nkeys:6
+#: ../input/resources/system/system.i18nkeys:7
 msgid "STATUS_OK"
 msgstr ""
 
