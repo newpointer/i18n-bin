@@ -129,7 +129,7 @@ function extractMessageParamsBySimple(text) {
     text = _s.trim(text);
 
     return (_s.isBlank(text) || text.indexOf('#') === 0) ? [] : [{
-	 'key': text
+        'key': text
     }];
 }
 
