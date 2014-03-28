@@ -13,19 +13,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "CLDR_PLURAL_FORMS_FORMAT: one{0}few{1}many{2}other{2}\n"
 
-#: ../input/src/scripts/dir.js/message.js:37 ../input/src/scripts/message.js:37
+#: ../input/src/scripts/dir.js/message.js:1 ../input/src/scripts/message.js:1
 msgid "STATUS_ERROR"
 msgstr ""
 
-#: ../input/src/scripts/dir.js/message.js:36 ../input/src/scripts/message.js:36
+#: ../input/src/scripts/dir.js/message.js:1 ../input/src/scripts/message.js:1
 msgid "STATUS_OK"
 msgstr ""
 
-#: ../input/src/scripts/dir.js/message.js:35 ../input/src/scripts/message.js:35
+#: ../input/src/scripts/dir.js/message.js:1 ../input/src/scripts/message.js:1
 msgid "SYSTEM_ERROR"
 msgstr ""
 
-#: ../input/src/scripts/dir.js/message.js:24 ../input/src/scripts/dir.js/message.js:25 ../input/src/scripts/message.js:24 ../input/src/scripts/message.js:25
+#: ../input/src/scripts/dir.js/message.js:1 ../input/src/scripts/message.js:1
 #, fuzzy
 msgid "Красивый лиловый шар, наполненный водородом."
 msgid_plural ""
@@ -33,7 +33,10 @@ msgstr[0] "Красивый лиловый шар, наполненный вод
 msgstr[1] "Красивый лиловый шар, наполненный водородом."
 msgstr[2] "Красивый лиловый шар, наполненный водородом."
 
-#: ../input/src/scripts/dir.js/message.js:4 ../input/src/scripts/dir.js/message.js:10 ../input/src/scripts/message.js:4 ../input/src/scripts/message.js:10 ../input/src/views/dir.ftl/template.ftl:2 ../input/src/views/dir.ftl/template.ftl:7 ../input/src/views/dir.ftl/template.ftl:8 ../input/src/views/dir.ftl/template.ftl:9 ../input/src/views/dir.ftl/template.ftl:10 ../input/src/views/dir.html/template.html:2 ../input/src/views/dir.html/template.html:7 ../input/src/views/dir.html/template.html:8 ../input/src/views/dir.html/template.html:9 ../input/src/views/dir.html/template.html:10 ../input/src/views/template.ftl:2 ../input/src/views/template.ftl:7 ../input/src/views/template.ftl:8 ../input/src/views/template.ftl:9 ../input/src/views/template.ftl:10 ../input/src/views/template.html:2 ../input/src/views/template.html:7 ../input/src/views/template.html:8 ../input/src/views/template.html:9 ../input/src/views/template.html:10
+#: ../input/src/scripts/dir.js/message.js:1 ../input/src/scripts/message.js:1
+#: ../input/src/views/dir.ftl/template.ftl:1
+#: ../input/src/views/dir.html/template.html:1
+#: ../input/src/views/template.ftl:1 ../input/src/views/template.html:1
 #, fuzzy
 msgid "ключ"
 msgid_plural ""
@@ -41,7 +44,10 @@ msgstr[0] "ключ"
 msgstr[1] "ключ"
 msgstr[2] "ключ"
 
-#: ../input/src/scripts/dir.js/message.js:6 ../input/src/scripts/dir.js/message.js:14 ../input/src/scripts/message.js:6 ../input/src/scripts/message.js:14 ../input/src/views/dir.ftl/template.ftl:4 ../input/src/views/dir.ftl/template.ftl:12 ../input/src/views/dir.ftl/template.ftl:13 ../input/src/views/dir.ftl/template.ftl:14 ../input/src/views/dir.ftl/template.ftl:15 ../input/src/views/dir.html/template.html:4 ../input/src/views/dir.html/template.html:12 ../input/src/views/dir.html/template.html:13 ../input/src/views/dir.html/template.html:14 ../input/src/views/dir.html/template.html:15 ../input/src/views/template.ftl:4 ../input/src/views/template.ftl:12 ../input/src/views/template.ftl:13 ../input/src/views/template.ftl:14 ../input/src/views/template.ftl:15 ../input/src/views/template.html:4 ../input/src/views/template.html:12 ../input/src/views/template.html:13 ../input/src/views/template.html:14 ../input/src/views/template.html:15
+#: ../input/src/scripts/dir.js/message.js:1 ../input/src/scripts/message.js:1
+#: ../input/src/views/dir.ftl/template.ftl:1
+#: ../input/src/views/dir.html/template.html:1
+#: ../input/src/views/template.ftl:1 ../input/src/views/template.html:1
 #, fuzzy
 msgctxt "к разгадке чего-либо"
 msgid "ключ"
@@ -50,7 +56,10 @@ msgstr[0] "ключ"
 msgstr[1] "ключ"
 msgstr[2] "ключ"
 
-#: ../input/src/scripts/dir.js/message.js:7 ../input/src/scripts/dir.js/message.js:18 ../input/src/scripts/message.js:7 ../input/src/scripts/message.js:18 ../input/src/views/dir.ftl/template.ftl:5 ../input/src/views/dir.ftl/template.ftl:17 ../input/src/views/dir.ftl/template.ftl:18 ../input/src/views/dir.ftl/template.ftl:19 ../input/src/views/dir.ftl/template.ftl:20 ../input/src/views/dir.html/template.html:5 ../input/src/views/dir.html/template.html:17 ../input/src/views/dir.html/template.html:18 ../input/src/views/dir.html/template.html:19 ../input/src/views/dir.html/template.html:20 ../input/src/views/template.ftl:5 ../input/src/views/template.ftl:17 ../input/src/views/template.ftl:18 ../input/src/views/template.ftl:19 ../input/src/views/template.ftl:20 ../input/src/views/template.html:5 ../input/src/views/template.html:17 ../input/src/views/template.html:18 ../input/src/views/template.html:19 ../input/src/views/template.html:20
+#: ../input/src/scripts/dir.js/message.js:1 ../input/src/scripts/message.js:1
+#: ../input/src/views/dir.ftl/template.ftl:1
+#: ../input/src/views/dir.html/template.html:1
+#: ../input/src/views/template.ftl:1 ../input/src/views/template.html:1
 #, fuzzy
 msgctxt "ключ воды, приток реки"
 msgid "ключ"
@@ -59,6 +68,9 @@ msgstr[0] "ключ"
 msgstr[1] "ключ"
 msgstr[2] "ключ"
 
-#: ../input/src/scripts/dir.js/message.js:21 ../input/src/scripts/message.js:21 ../input/src/views/dir.ftl/template.ftl:22 ../input/src/views/dir.html/template.html:22 ../input/src/views/template.ftl:22 ../input/src/views/template.html:22
+#: ../input/src/scripts/dir.js/message.js:1 ../input/src/scripts/message.js:1
+#: ../input/src/views/dir.ftl/template.ftl:1
+#: ../input/src/views/dir.html/template.html:1
+#: ../input/src/views/template.ftl:1 ../input/src/views/template.html:1
 msgid "корова"
 msgstr ""

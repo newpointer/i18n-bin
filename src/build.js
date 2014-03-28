@@ -76,7 +76,7 @@ function run(o, callback) {
                 fs.copySync(poHeaderFile, poFile);
             }
 
-            exec(util.format('msgmerge -U -v -s --width=1024 %s %s', poFile, potFile), function(error, stdout, stderr) {
+            exec(util.format('msgmerge -U -v -s --no-wrap %s %s', poFile, potFile), function(error, stdout, stderr) {
                 console.log(lang + '...');
                 console.log(poFile);
 

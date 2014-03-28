@@ -13,15 +13,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "CLDR_PLURAL_FORMS_FORMAT: one{0}few{1}many{2}other{2}\n"
 
-#: ../input/resources/system/system.i18nkeys:5
+#: ../input/resources/system/system.i18nkeys:1
 msgid "STATUS_ERROR"
 msgstr ""
 
-#: ../input/resources/system/system.i18nkeys:7
+#: ../input/resources/system/system.i18nkeys:1
 msgid "STATUS_OK"
 msgstr ""
 
-#: ../input/resources/system/system.i18nkeys:4
+#: ../input/resources/system/system.i18nkeys:1
 msgid "SYSTEM_ERROR"
 msgstr ""
 
@@ -29,6 +29,6 @@ msgstr ""
 msgid "ключ"
 msgstr ""
 
-#: ../input/resources/xxx/xxx.txt:2
+#: ../input/resources/xxx/xxx.txt:1
 msgid "корова"
 msgstr ""
