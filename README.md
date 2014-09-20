@@ -2,6 +2,8 @@
 
 > Скрипты интернационализации
 
+[Использование](https://github.com/newpointer/i18n-bin/blob/master/src/build.md)
+
 ##Окружение
 
 Установить:
