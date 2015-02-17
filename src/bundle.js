@@ -8,7 +8,7 @@
 
 //
 var util            = require('util'),
-    _               = require('underscore'),
+    _               = require('lodash'),
     pohelper        = require('./po-helper'),
     path            = require('path'),
     fs              = require('fs-extra');

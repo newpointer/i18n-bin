@@ -8,7 +8,7 @@
 
 //
 var po2json = require('po2json'),
-    _       = require('underscore');
+    _       = require('lodash');
 
 //
 var PO_HEADER_KEY = '';

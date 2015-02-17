@@ -1,11 +1,11 @@
 {
     "name" : "nullpointer-i18n-bin",
-    "version" : "0.0.1-SNAPSHOT",
+    "version" : "1.0.0-SNAPSHOT",
     "description": "i18n scripts",
     "keywords": ["i18n", "gettext", "po", "pot"],
 
     "author": {
-        "name": "Nullpointer",
+        "name": "nullpointer",
         "url": "http://null-pointer.ru/"
     },
 
@@ -17,8 +17,8 @@
 
     "dependencies": {
         "po2json": "0.2.x",
-        "underscore": "1.4.x",
-        "underscore.string": "2.3.x",
+        "lodash": "3.*",
+        "underscore.string": "3.*",
         "fs-extra": "0.8.x",
         "glob": "3.2.x",
         "byline": "2.0.x"
