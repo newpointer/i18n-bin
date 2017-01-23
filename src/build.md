@@ -8,9 +8,9 @@
 
 Формирование JSON-бандла переводов для использования в сторонних компонентах, например:
 
-[nullpointer-i18n-js](http://git.repo.nkb/git/gitweb.cgi?p=nullpointer/i18n-js.git;a=shortlog;h=refs/heads/master)
+[nullpointer-i18n-js](https://github.com/newpointer/i18n-js/blob/master/docs/i18n.md)
 
-[nullpointer-i18n-java](http://git.repo.nkb/git/gitweb.cgi?p=nullpointer/i18n-java.git;a=shortlog;h=refs/heads/master)
+[nullpointer-i18n-java](https://github.com/newpointer/i18n-java/blob/master/docs/i18n.md)
 
 ## Философия
 
